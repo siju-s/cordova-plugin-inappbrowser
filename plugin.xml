@@ -45,6 +45,14 @@
                 <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser"/>
             </feature>
         </config-file>
+	    
+	 <!-- Android 11 package visibility for browsers-->
+        <config-file parent="/manifest/queries" target="app/src/main/AndroidManifest.xml">
+            <intent>
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="*" />
+            </intent>
+        </config-file>
 
         <source-file src="src/android/InAppBrowser.java" target-dir="src/org/apache/cordova/inappbrowser" />
         <source-file src="src/android/InAppBrowserDialog.java" target-dir="src/org/apache/cordova/inappbrowser" />
